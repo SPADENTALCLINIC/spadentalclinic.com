@@ -103,6 +103,17 @@
             max-width: 900px;
             margin: 0 auto;
         }
+		 .reg-badge {
+            background: #dbeafe;
+            color: var(--primary);
+            padding: 5px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
 
         h2.hero-name { font-family: 'Outfit', sans-serif; font-size: clamp(2.5rem, 8vw, 4rem); color: var(--primary); font-weight: 800; }
 
@@ -138,6 +149,7 @@
             border-radius: 12px;
             border: 1px solid #e2e8f0;
             background: rgba(255, 255, 255, 0.8);
+            font-family: inherit;
         }
 
         .btn-submit {
@@ -177,7 +189,7 @@
         @media (max-width: 968px) {
             .main-content { grid-template-columns: 1fr; }
             header { padding-top: 120px; }
-            .btn-call-nav { display: none; } /* Use floating button on mobile */
+            .btn-call-nav { display: none; }
         }
     </style>
 </head>
@@ -194,7 +206,9 @@
     <a href="tel:7904964623" class="floating-call">📞</a>
 
     <header>
-        <h2 class="hero-name" id="doc-name">Dr. S. Parvatham </h2>
+        <h2 class="hero-name" id="doc-name">Dr. S.Parvatham</h2>
+				<div class="reg-badge">TNSDC Reg No: 22347</div>
+
         <p id="doc-title" style="font-size: 1.2rem; font-weight: 600; color: #64748b;">B.D.S (Dental Surgeon)</p>
     </header>
 
@@ -237,26 +251,23 @@
                 <input type="text" id="name" placeholder="Patient Name" required>
                 <select id="service" required>
                     <option value="" id="opt-def">Select Service</option>
-                    <option>Root Canal</option>
-                    <option>Kids Dentistry</option>
-                    <option>Tooth Pain</option>
-                    <option>Tooth Replacement</option>
-                    <option>Consultation</option>
-                    <option>Whitening</option>
+                    <option id="opt1">Root Canal</option>
+                    <option id="opt2">Kids Dentistry</option>
+                    <option id="opt3">Tooth Pain</option>
+                    <option id="opt4">Tooth Replacement</option>
+                    <option id="opt5">Consultation</option>
+                    <option id="opt6">Whitening</option>
                 </select>
                 <button type="submit" class="btn-submit" id="btn-text">WhatsApp Booking</button>
             </form>
             <a href="tel:7904964623" class="btn-call-secondary" id="sec-call-btn">Direct Call: 79049 64623</a>
-            <p style="margin-top:20px; font-size: 0.8rem; color: #ef4444; font-weight: 600;" id="warn-msg">
-                ⚠️ Note: Only patients allowed inside.
-            </p>
         </div>
     </div>
 
     <footer>
         <p id="footer-copy">&copy; 2026 S P A Dental Clinic. All Rights Reserved.</p>
         <p id="footer-doc">Dr. S.Parvatham (B.D.S) | TNSDC Reg No: 22347</p>
-        <p style="margin-top: 10px; font-style: italic;">"A Service Beyond Promise"</p>
+        <p style="margin-top: 10px; font-style: italic;" id="tagline">"A Service Beyond Promise"</p>
     </footer>
 
     <script>
@@ -268,6 +279,8 @@
                     title: "S P A Dental Clinic | Dr. S.Parvatham",
                     nav: "S P A DENTAL CLINIC",
                     call: "Call Now",
+                    docName: "Dr. S. Parvatham",
+                    docTitle: "B.D.S (Dental Surgeon)",
                     head: "Our Dental Services",
                     s1: "Root Canal Service", s1d: "Pain-free restoration of infected teeth.",
                     s2: "Kids Tooth Advice", s2d: "Dedicated pediatric care and growth monitoring.",
@@ -275,41 +288,77 @@
                     s4: "Tooth Replacement", s4d: "Bridges, dentures, and modern implant solutions.",
                     s5: "Dental Consultation", s5d: "Complete oral checkup and treatment planning.",
                     s6: "Tooth Whitening", s6d: "Professional cleaning for a brighter smile.",
+                    visitHead: "Book Appointment",
+                    patientPlace: "Patient Name",
+                    optDef: "Select Service",
+                    o1: "Root Canal", o2: "Kids Dentistry", o3: "Tooth Pain", o4: "Tooth Replacement", o5: "Consultation", o6: "Whitening",
                     btn: "WhatsApp Booking",
+                    secCall: "Direct Call: 79049 64623",
                     copy: "© 2026 S P A Dental Clinic. All Rights Reserved.",
-                    warn: "⚠️ Note: Only patients allowed inside."
+                    tag: "\"A Service Beyond Promise\""
                 },
                 ta: {
-                    title: "எஸ்.பி.ஏ பல் மருத்துவமனை | டாக்டர் சு.பர்வதம் ",
+                    title: "எஸ்.பி.ஏ பல் மருத்துவமனை | டாக்டர். சு.பர்வதம்",
                     nav: "எஸ்.பி.ஏ பல் மருத்துவமனை",
                     call: "அழைக்க",
-                    head: "பல் மருத்துவ சேவைகள்",
+                    docName: "டாக்டர். சு.பர்வதம்",
+                    docTitle: "B.D.S (பல் அறுவை சிகிச்சை நிபுணர்)",
+                    head: "எங்கள் பல் மருத்துவ சேவைகள்",
                     s1: "ரூட் கெனால் சிகிச்சை", s1d: "பாதிக்கப்பட்ட பற்களை வலியின்றி சரி செய்தல்.",
                     s2: "குழந்தைகளுக்கான ஆலோசனை", s2d: "குழந்தைகளுக்கான சிறப்பு பல் பராமரிப்பு.",
                     s3: "பல் வலி சிகிச்சை", s3d: "பல் வலிக்கு உடனடித் தீர்வு மற்றும் பரிசோதனை.",
                     s4: "பல் மாற்று சிகிச்சை", s4d: "பற்கள் கட்டுதல் மற்றும் நவீன மாற்று முறைகள்.",
                     s5: "பல் பரிசோதனை", s5d: "முழுமையான பல் பரிசோதனை மற்றும் ஆலோசனை.",
                     s6: "பற்கள் வெண்மையாக்குதல்", s6d: "பற்களை வெண்மையாக்கும் நவீன சிகிச்சை.",
+                    visitHead: "முன்பதிவு செய்ய",
+                    patientPlace: "நோயாளி பெயர்",
+                    optDef: "சேவையைத் தேர்ந்தெடுக்கவும்",
+                    o1: "ரூட் கெனால்", o2: "குழந்தைகள் பல் மருத்துவம்", o3: "பல் வலி", o4: "பல் மாற்று சிகிச்சை", o5: "பரிசோதனை", o6: "வெண்மையாக்குதல்",
                     btn: "வாட்ஸ்அப் முன்பதிவு",
+                    secCall: "நேரடி அழைப்பு: 79049 64623",
                     copy: "© 2026 எஸ்.பி.ஏ பல் மருத்துவமனை. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
-                    warn: "⚠️ குறிப்பு: நோயாளிகள் மட்டுமே உள்ளே அனுமதிக்கப்படுவார்கள்."
+                    tag: "\"வாக்களித்ததை விட சிறந்த சேவை\""
                 }
             };
 
             const lang = isTamil ? t.ta : t.en;
+
+            // Identity
             document.getElementById('page-title').innerText = lang.title;
             document.getElementById('nav-brand').innerText = lang.nav;
+            document.getElementById('doc-name').innerText = lang.docName;
+            document.getElementById('doc-title').innerText = lang.docTitle;
+            
+            // Buttons & Navigation
             document.getElementById('nav-call-btn').innerText = lang.call;
+            document.getElementById('sec-call-btn').innerText = lang.secCall;
+            
+            // Layout Heads
             document.getElementById('services-head').innerText = lang.head;
+            document.getElementById('visit-head').innerText = lang.visitHead;
+
+            // Service Cards
             document.getElementById('s1').innerText = lang.s1; document.getElementById('s1d').innerText = lang.s1d;
             document.getElementById('s2').innerText = lang.s2; document.getElementById('s2d').innerText = lang.s2d;
             document.getElementById('s3').innerText = lang.s3; document.getElementById('s3d').innerText = lang.s3d;
             document.getElementById('s4').innerText = lang.s4; document.getElementById('s4d').innerText = lang.s4d;
             document.getElementById('s5').innerText = lang.s5; document.getElementById('s5d').innerText = lang.s5d;
             document.getElementById('s6').innerText = lang.s6; document.getElementById('s6d').innerText = lang.s6d;
+
+            // Form Elements
+            document.getElementById('name').placeholder = lang.patientPlace;
+            document.getElementById('opt-def').innerText = lang.optDef;
+            document.getElementById('opt1').innerText = lang.o1;
+            document.getElementById('opt2').innerText = lang.o2;
+            document.getElementById('opt3').innerText = lang.o3;
+            document.getElementById('opt4').innerText = lang.o4;
+            document.getElementById('opt5').innerText = lang.o5;
+            document.getElementById('opt6').innerText = lang.o6;
+            
+            // Footer & Warnings
             document.getElementById('btn-text').innerText = lang.btn;
             document.getElementById('footer-copy').innerText = lang.copy;
-            document.getElementById('warn-msg').innerText = lang.warn;
+            document.getElementById('tagline').innerText = lang.tag;
         }
 
         document.getElementById('appointmentForm').addEventListener('submit', function(e) {
