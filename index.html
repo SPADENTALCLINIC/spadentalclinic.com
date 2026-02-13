@@ -1,1 +1,206 @@
-Welcome to S.P.A Dental Clinic 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.P.A Dental Clinic | Dr. Parvatham S</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --primary: #2C5F7C;
+            --accent: #4A9FC7;
+            --text: #1e293b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #e0f2fe 0%, #f1f5f9 100%);
+            background-attachment: fixed;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 1200px;
+            padding: 12px 25px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area { display: flex; align-items: center; gap: 10px; }
+        
+        /* Hero Section */
+        .hero {
+            padding: 140px 20px 60px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 { font-size: clamp(2rem, 8vw, 3.5rem); color: var(--primary); margin-bottom: 5px; }
+        .badge { background: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; }
+
+        /* Services Grid */
+        .section-title { text-align: center; margin: 40px 0 20px; font-size: 1.8rem; color: var(--primary); }
+        
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+
+        .service-card { padding: 25px; transition: 0.3s; text-align: center; }
+
+        /* Map & Booking Section */
+        .location-booking {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+            border-radius: 24px;
+            border: 1px solid var(--glass-border);
+        }
+
+        iframe { width: 100%; height: 100%; border: none; }
+
+        .booking-card { padding: 30px; }
+
+        /* Form styling */
+        form { display: flex; flex-direction: column; gap: 12px; }
+        input, select, textarea {
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+            background: rgba(255, 255, 255, 0.9);
+            width: 100%;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 968px) {
+            .location-booking { grid-template-columns: 1fr; }
+            nav { padding: 10px 15px; }
+            .nav-cta { display: none; } /* Hide button on very small navs to save space */
+        }
+
+        @media (max-width: 480px) {
+            .hero { padding-top: 120px; }
+            .section-title { font-size: 1.5rem; }
+            .map-container { height: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="glass">
+        <div class="logo-area">
+            <div style="background: #2C5F7C; color: white; padding: 8px; border-radius: 6px; font-weight: bold;">SPA</div>
+            <div>
+                <h2 style="font-size: 1rem; line-height: 1;">S.P.A Dental Clinic</h2>
+                <small style="font-size: 0.7rem;">A Service Beyond Promise</small>
+            </div>
+        </div>
+        <a href="tel:7904964623" class="btn nav-cta" style="font-size: 0.8rem;">Book: 7904964623</a>
+    </nav>
+
+    <section class="hero">
+        <span class="badge">TNSDC Reg No: 22347</span>
+        <h1>Dr. Parvatham S</h1>
+        <p style="font-size: 1.2rem; color: #475569; font-weight: 600;">B.D.S (Dental Surgeon)</p>
+    </section>
+
+    <h2 class="section-title">Specialized Services</h2>
+    <div class="services-container">
+        <div class="service-card glass">
+            <h3>🦷 Laser Surgery</h3>
+            <p>Advanced treatment for Pyorrhea.</p>
+        </div>
+        <div class="service-card glass">
+            <h3>🚑 Oral Surgery</h3>
+            <p>Face & Jaw fractures, Cyst & Tumors.</p>
+        </div>
+        <div class="service-card glass">
+            <h3>✨ Aesthetic</h3>
+            <p>Tooth Jewellery, Whitening & Cleaning.</p>
+        </div>
+    </div>
+
+    <section class="location-booking">
+        <div class="map-container glass">
+            <iframe 
+                src="https://www.mappls.com/k17af2" 
+                title="S.P.A Dental Clinic Location">
+            </iframe>
+        </div>
+
+        <div class="booking-card glass">
+            <h2 style="color: var(--primary); margin-bottom: 15px;">Book Appointment</h2>
+            <form action="https://wa.me/917904964623" method="get" target="_blank">
+                <input type="text" name="text" placeholder="Your Name" required>
+                <select required>
+                    <option value="">Select Service</option>
+                    <option>General Checkup</option>
+                    <option>Laser Surgery</option>
+                    <option>Pediatric Care</option>
+                    <option>Braces</option>
+                </select>
+                <p style="font-size: 0.85rem; margin: 5px 0;"><strong>Hours:</strong> Mon-Sat: 9:30AM-8:00PM | Sun: 9:30AM-1:00PM.</p>
+                <button type="submit" class="btn">Message on WhatsApp</button>
+            </form>
+            <div style="margin-top: 15px; font-size: 0.8rem; color: #ef4444; border-top: 1px solid #ddd; padding-top: 10px;">
+                Note: Only Patient kindly enter inside. Don't disturb when Doctor is working.
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 30px; color: #64748b; font-size: 0.9rem;">
+        <p>&copy; 2026 S.P.A Dental Clinic | Phone: 7904964623</p>
+    </footer>
+
+</body>
+</html>
