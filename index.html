@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title id="page-title">S P A Dental Clinic | Best Dentist in Padappai & Chennai | Dr. S.Parvatham</title>
+    <title id="page-title">S P A Dental Clinic | Best Dentist in Padappai, Chennai | Dr. S.Parvatham</title>
     <meta name="description" content="S P A Dental Clinic by Dr. S.Parvatham (B.D.S). Best Dentist in Padappai, Chennai. Open 10 AM to 8:30 PM. Expert Root Canal and Kids Dentistry.">
     <meta name="keywords" content="Dental Clinic Chennai, Dentist in Padappai, Root Canal Chennai, Dr. S Parvatham, SPA Dental, Best Dentist Chennai, Dental Surgeon Padappai">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -51,7 +51,9 @@
         .lang-toggle {
             background: white; color: var(--primary); border: 1px solid var(--primary);
             padding: 8px 16px; border-radius: 50px; font-weight: 700; cursor: pointer;
+            transition: 0.3s;
         }
+        .lang-toggle:hover { background: var(--primary); color: white; }
 
         header { padding: 160px 20px 30px; text-align: center; }
         h2.hero-name { font-family: 'Outfit', sans-serif; font-size: clamp(2.5rem, 8vw, 4rem); color: var(--primary); font-weight: 800; }
@@ -95,6 +97,7 @@
         .btn-submit {
             width: 100%; padding: 18px; background: #25D366; color: white;
             border: none; border-radius: 15px; font-weight: 800; cursor: pointer;
+            font-size: 1rem;
         }
 
         .contact-us-section { max-width: 1200px; margin: 40px auto; padding: 40px 20px; text-align: center; }
@@ -121,7 +124,6 @@
         <div class="brand"><h1 id="nav-brand">S P A DENTAL CLINIC</h1></div>
         <div class="nav-actions">
             <button class="lang-toggle" onclick="toggleLanguage()">தமிழ் / EN</button>
-            <!--<a href="tel:7904964623" id="nav-call" style="background:var(--primary); color:white; text-decoration:none; padding:8px 20px; border-radius:50px; font-weight:700; font-size:0.8rem;">Call Now</a>-->
         </div>
     </nav>
 
@@ -170,7 +172,7 @@
 
     <div class="main-content">
         <div class="map-wrapper">
-            <h2 id="map-title">Location Map</h2>
+            <h2 id="map-title" style="margin-bottom: 20px; text-align: center; color: var(--primary);">Mappls Location</h2>
             <div class="glass" style="height: 450px; overflow: hidden;">
                 <iframe src="https://embed.mappls.com/place/k17af2?zoom=16" style="width:100%; height:100%; border:none;"></iframe>
             </div>
@@ -182,12 +184,12 @@
                 <input type="text" id="name" placeholder="Patient Name" style="width:100%; padding:15px; margin-bottom:12px; border-radius:12px; border:1px solid #e2e8f0;" required>
                 <select id="service" style="width:100%; padding:15px; margin-bottom:12px; border-radius:12px; border:1px solid #e2e8f0;" required>
                     <option value="" id="opt-def">Select Service</option>
-                    <option id="opt1">Root Canal</option>
-                    <option id="opt2">Kids Dentistry</option>
-                    <option id="opt3">Tooth Pain</option>
-                    <option id="opt4">Replacement</option>
-                    <option id="opt5">Consultation</option>
-                    <option id="opt6">Whitening</option>
+                    <option id="opt1" value="Root Canal">Root Canal</option>
+                    <option id="opt2" value="Kids Dentistry">Kids Dentistry</option>
+                    <option id="opt3" value="Tooth Pain">Tooth Pain</option>
+                    <option id="opt4" value="Replacement">Replacement</option>
+                    <option id="opt5" value="Consultation">Consultation</option>
+                    <option id="opt6" value="Whitening">Whitening</option>
                 </select>
                 <button type="submit" class="btn-submit" id="btn-text">WhatsApp Booking</button>
             </form>
@@ -201,7 +203,7 @@
                 <h2 id="contact-head">Visit Us</h2>
                 <div style="font-weight: 700; color: #334155; margin-bottom: 20px;">
                     <p><strong id="addr-line1">SPA Dental Clinic – Padappai Branch</strong></p>
-                    <p id="addr-line2">k17af2, 1/190A, First Salamangalam Road Athanancheri,</p>
+                    <p id="addr-line2">1/190A, First Salamangalam Road Athanancheri,</p>
                     <p id="addr-line3">Salamangalam Junction, Padappai, Chennai, Tamil Nadu, 601301</p>
                     <div class="hours-badge" id="hours-badge">Open: 10 AM to 8:30 PM</div>
                 </div>
@@ -222,12 +224,13 @@
 
     <script>
         let isTamil = false;
+
         function toggleLanguage() {
             isTamil = !isTamil;
             const t = {
                 en: {
                     title: "S P A Dental Clinic | Best Dentist in Padappai & Chennai",
-                    nav: "S P A DENTAL CLINIC", navCall: "Call Now",
+                    nav: "S P A DENTAL CLINIC", 
                     docName: "Dr. S. Parvatham", docTitle: "B.D.S (Dental Surgeon)",
                     heroBtn: "Book Appointment", years: "Years Experience", patients: "Patients Served", rating: "Customer Rating",
                     gallery: "Clinical Excellence", cap1: "Expert Dental Consultation", cap2: "Friendly Kids Dentistry", cap3: "Advanced Root Canal Care",
@@ -237,19 +240,19 @@
                     s4: "Replacement", s4d: "Bridges and modern implant solutions.",
                     s5: "Consultation", s5d: "Complete oral checkup and planning.",
                     s6: "Whitening", s6d: "Professional cleaning for a bright smile.",
-                    mapTitle: "Location Map", visitHead: "Book Appointment", patientPlace: "Patient Name",
+                    mapTitle: "Mappls Location", visitHead: "Book Appointment", patientPlace: "Patient Name",
                     optDef: "Select Service", o1: "Root Canal", o2: "Kids Dentistry", o3: "Tooth Pain", o4: "Replacement", o5: "Consultation", o6: "Whitening",
                     btn: "WhatsApp Booking", directCall: "Direct Call: 79049 64623",
                     contactHead: "Visit Us", 
-                    addr1: "SPA Dental Clinic – Padappai Branch",
-                    addr2: "k17af2, 1/190A, First Salamangalam Road Athanancheri,",
+                    addr1: "SPA Dental Clinic – Padappai",
+                    addr2: "1/190A, First Salamangalam Road Athanancheri,",
                     addr3: "Salamangalam Junction, Padappai, Chennai, Tamil Nadu, 601301",
                     hours: "Open: 10 AM to 8:30 PM", phone: "Phone: +91 79049 64623", email: "Email: booking@spadentalclinic.com",
                     copy: "© 2026 S P A Dental Clinic Chennai. All Rights Reserved.", reg: "Dr. S.Parvatham (B.D.S) | TNSDC Reg No: 22347", fHours: "Working Hours: 10:00 AM - 08:30 PM", tag: "\"Providing Smiles Across Chennai\""
                 },
                 ta: {
-                    title: "எஸ்.பி.ஏ பல் மருத்துவமனை | சென்னை & படப்பை",
-                    nav: "எஸ்.பி.ஏ பல் மருத்துவமனை", navCall: "அழைக்க",
+                    title: "எஸ்.பி.ஏ பல் மருத்துவமனை | படப்பை , சென்னை",
+                    nav: "எஸ்.பி.ஏ பல் மருத்துவமனை", 
                     docName: "டாக்டர் சு. பர்வதம்", docTitle: "B.D.S (பல் அறுவை சிகிச்சை நிபுணர்)",
                     heroBtn: "முன்பதிவு செய்ய", years: "ஆண்டுகள் அனுபவம்", patients: "சிகிச்சை பெற்றவர்கள்", rating: "வாடிக்கையாளர் மதிப்பீடு",
                     gallery: "சிறந்த சிகிச்சை", cap1: "நிபுணர் பல் ஆலோசனை", cap2: "குழந்தைகளுக்கான பல் மருத்துவம்", cap3: "மேம்பட்ட ரூட் கெனால் சிகிச்சை",
@@ -259,12 +262,12 @@
                     s4: "பல் மாற்று", s4d: "நவீன பல் மாற்று முறைகள்.",
                     s5: "பரிசோதனை", s5d: "முழுமையான பல் பரிசோதனை மற்றும் ஆலோசனை.",
                     s6: "பற்கள் வெண்மையாக்குதல்", s6d: "பற்களை வெண்மையாக்கும் நவீன சிகிச்சை.",
-                    mapTitle: "வரைபடம்", visitHead: "முன்பதிவு செய்ய", patientPlace: "நோயாளி பெயர்",
+                    mapTitle: "மேப்பல்ஸ் வரைபடம்", visitHead: "முன்பதிவு செய்ய", patientPlace: "நோயாளி பெயர்",
                     optDef: "சேவையைத் தேர்ந்தெடுக்கவும்", o1: "ரூட் கெனால்", o2: "குழந்தைகள் பல் மருத்துவம்", o3: "பல் வலி", o4: "பல் மாற்று", o5: "பரிசோதனை", o6: "வெண்மையாக்குதல்",
                     btn: "வாட்ஸ்அப் முன்பதிவு", directCall: "நேரடி அழைப்பு: 79049 64623",
                     contactHead: "நேரில் வர", 
-                    addr1: "எஸ்.பி.ஏ பல் மருத்துவமனை – படப்பை கிளை",
-                    addr2: "k17af2, 1/190A, முதல் சலமங்கலம் சாலை, அதனஞ்சேரி,",
+                    addr1: "எஸ்.பி.ஏ பல் மருத்துவமனை – படப்பை ",
+                    addr2: "1/190A, முதல் சலமங்கலம் சாலை, அதனஞ்சேரி,",
                     addr3: "சலமங்கலம் சந்திப்பு, படப்பை, சென்னை, தமிழ்நாடு, 601301",
                     hours: "நேரம்: காலை 10 - இரவு 8:30", phone: "தொலைபேசி: +91 79049 64623", email: "மின்னஞ்சல்: booking@spadentalclinic.com",
                     copy: "© 2026 எஸ்.பி.ஏ பல் மருத்துவமனை. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.", reg: "டாக்டர் சு. பர்வதம் (B.D.S) | TNSDC பதிவு எண்: 22347", fHours: "வேலை நேரம்: காலை 10:00 - இரவு 08:30", tag: "\"சென்னை முழுவதும் புன்னகையை வழங்குதல்\""
@@ -273,65 +276,67 @@
 
             const lang = isTamil ? t.ta : t.en;
             
-            // Core Text
-            document.getElementById('page-title').innerText = lang.title;
-            document.getElementById('nav-brand').innerText = lang.nav;
-            document.getElementById('nav-call').innerText = lang.navCall;
-            document.getElementById('doc-name').innerText = lang.docName;
-            document.getElementById('doc-title').innerText = lang.docTitle;
-            document.getElementById('hero-book-btn').innerText = lang.heroBtn;
-            document.getElementById('stat-years').innerText = lang.years;
-            document.getElementById('stat-patients').innerText = lang.patients;
-            document.getElementById('stat-rating').innerText = lang.rating;
-            document.getElementById('gallery-head').innerText = lang.gallery;
-            document.getElementById('cap1').innerText = lang.cap1;
-            document.getElementById('cap2').innerText = lang.cap2;
-            document.getElementById('cap3').innerText = lang.cap3;
-            document.getElementById('services-head').innerText = lang.head;
+            const updateText = (id, text, isPlaceholder = false) => {
+                const el = document.getElementById(id);
+                if (el) {
+                    if (isPlaceholder) el.placeholder = text;
+                    else el.innerText = text;
+                }
+            };
+
+            updateText('page-title', lang.title);
+            updateText('nav-brand', lang.nav);
+            updateText('doc-name', lang.docName);
+            updateText('doc-title', lang.docTitle);
+            updateText('hero-book-btn', lang.heroBtn);
+            updateText('stat-years', lang.years);
+            updateText('stat-patients', lang.patients);
+            updateText('stat-rating', lang.rating);
+            updateText('gallery-head', lang.gallery);
+            updateText('cap1', lang.cap1);
+            updateText('cap2', lang.cap2);
+            updateText('cap3', lang.cap3);
+            updateText('services-head', lang.head);
             
-            // Services
-            document.getElementById('s1').innerText = lang.s1; document.getElementById('s1d').innerText = lang.s1d;
-            document.getElementById('s2').innerText = lang.s2; document.getElementById('s2d').innerText = lang.s2d;
-            document.getElementById('s3').innerText = lang.s3; document.getElementById('s3d').innerText = lang.s3d;
-            document.getElementById('s4').innerText = lang.s4; document.getElementById('s4d').innerText = lang.s4d;
-            document.getElementById('s5').innerText = lang.s5; document.getElementById('s5d').innerText = lang.s5d;
-            document.getElementById('s6').innerText = lang.s6; document.getElementById('s6d').innerText = lang.s6d;
+            updateText('s1', lang.s1); updateText('s1d', lang.s1d);
+            updateText('s2', lang.s2); updateText('s2d', lang.s2d);
+            updateText('s3', lang.s3); updateText('s3d', lang.s3d);
+            updateText('s4', lang.s4); updateText('s4d', lang.s4d);
+            updateText('s5', lang.s5); updateText('s5d', lang.s5d);
+            updateText('s6', lang.s6); updateText('s6d', lang.s6d);
             
-            // Map & Form
-            document.getElementById('map-title').innerText = lang.mapTitle;
-            document.getElementById('visit-head').innerText = lang.visitHead;
-            document.getElementById('name').placeholder = lang.patientPlace;
-            document.getElementById('opt-def').innerText = lang.optDef;
-            document.getElementById('opt1').innerText = lang.o1;
-            document.getElementById('opt2').innerText = lang.o2;
-            document.getElementById('opt3').innerText = lang.o3;
-            document.getElementById('opt4').innerText = lang.o4;
-            document.getElementById('opt5').innerText = lang.o5;
-            document.getElementById('opt6').innerText = lang.o6;
-            document.getElementById('btn-text').innerText = lang.btn;
-            document.getElementById('direct-call').innerText = lang.directCall;
+            updateText('map-title', lang.mapTitle);
+            updateText('visit-head', lang.visitHead);
+            updateText('name', lang.patientPlace, true);
+            updateText('opt-def', lang.optDef);
+            updateText('opt1', lang.o1);
+            updateText('opt2', lang.o2);
+            updateText('opt3', lang.o3);
+            updateText('opt4', lang.o4);
+            updateText('opt5', lang.o5);
+            updateText('opt6', lang.o6);
+            updateText('btn-text', lang.btn);
+            updateText('direct-call', lang.directCall);
             
-            // Contact & Address Fix
-            document.getElementById('contact-head').innerText = lang.contactHead;
-            document.getElementById('addr-line1').innerText = lang.addr1;
-            document.getElementById('addr-line2').innerText = lang.addr2;
-            document.getElementById('addr-line3').innerText = lang.addr3;
-            document.getElementById('hours-badge').innerText = lang.hours;
-            document.getElementById('phone-label').innerText = lang.phone;
-            document.getElementById('email-label').innerText = lang.email;
+            updateText('contact-head', lang.contactHead);
+            updateText('addr-line1', lang.addr1);
+            updateText('addr-line2', lang.addr2);
+            updateText('addr-line3', lang.addr3);
+            updateText('hours-badge', lang.hours);
+            updateText('phone-label', lang.phone);
+            updateText('email-label', lang.email);
             
-            // Footer
-            document.getElementById('footer-copy').innerText = lang.copy;
-            document.getElementById('footer-reg').innerText = lang.reg;
-            document.getElementById('footer-hours').innerText = lang.fHours;
-            document.getElementById('tagline').innerText = lang.tag;
+            updateText('footer-copy', lang.copy);
+            updateText('footer-reg', lang.reg);
+            updateText('footer-hours', lang.fHours);
+            updateText('tagline', lang.tag);
         }
 
         document.getElementById('appointmentForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const patientName = document.getElementById('name').value;
             const serviceChosen = document.getElementById('service').value;
-            const msg = `S P A Dental Appointment:%0A- Patient: ${patientName}%0A- Service: ${serviceChosen}`;
+            const msg = `S P A Dental Appointment:%0A- Patient: ${encodeURIComponent(patientName)}%0A- Service: ${encodeURIComponent(serviceChosen)}`;
             window.open(`https://wa.me/917904964623?text=${msg}`, '_blank');
         });
     </script>
