@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head prefix="og: http://ogp.me/ns#">
@@ -23,7 +22,7 @@
     <link rel="apple-touch-icon" href="https://spadentalclinic.com/favicon.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    </head>
+    
     <style>
         :root {
             --glass-bg: rgba(255, 255, 255, 0.75);
@@ -57,21 +56,40 @@
 
         nav {
             position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
-            width: 95%; max-width: 1200px; padding: 12px 30px; z-index: 1000;
+            width: 95%; max-width: 1200px; padding: 10px 25px; z-index: 1000;
             display: flex; justify-content: space-between; align-items: center;
         }
 
-        .brand h1 { font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--primary); }
+        .brand { display: flex; align-items: center; gap: 12px; }
+        .nav-logo { height: 40px; width: 40px; border-radius: 8px; }
+        .brand h1 { font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--primary); }
 
         .lang-toggle {
             background: white; color: var(--primary); border: 1px solid var(--primary);
             padding: 8px 16px; border-radius: 50px; font-weight: 700; cursor: pointer;
-            transition: 0.3s;
+            transition: 0.3s; font-size: 0.9rem;
         }
         .lang-toggle:hover { background: var(--primary); color: white; }
 
-        header { padding: 160px 20px 30px; text-align: center; }
-        h2.hero-name { font-family: 'Outfit', sans-serif; font-size: clamp(2.5rem, 8vw, 4rem); color: var(--primary); font-weight: 800; }
+        header 
+        { padding: 160px 20px 30px; text-align: center; }
+        .header-logo { 
+            height: 120px; 
+            width: auto; 
+            margin-bottom: 10px; 
+            background: transparent; /* Ensures no white box */
+            mix-blend-mode: multiply; /* Helps blend the white background of the PNG if it's not transparent */
+        }
+        h2.hero-name { font-family: 'Outfit', sans-serif; font-size: clamp(2.5rem, 8vw, 4rem); color: var(--primary); font-weight: 800; margin-bottom: 5px; }
+
+        .motto-text {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-top: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
 
         .btn-book-hero {
             display: inline-block; background: var(--primary); color: white;
@@ -130,13 +148,19 @@
             text-decoration: none; font-size: 1.5rem; box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3);
         }
 
-        @media (max-width: 968px) { .main-content { grid-template-columns: 1fr; } }
+        @media (max-width: 968px) { 
+            .main-content { grid-template-columns: 1fr; }
+            .brand h1 { font-size: 0.9rem; }
+        }
     </style>
 </head>
 <body>
 
     <nav class="glass">
-        <div class="brand"><h1 id="nav-brand">S P A DENTAL CLINIC</h1></div>
+        <div class="brand">
+            <img src="https://spadentalclinic.com/favicon.png" alt="SPA Dental Logo" class="nav-logo">
+            <h1 id="nav-brand">S P A DENTAL CLINIC</h1>
+        </div>
         <div class="nav-actions">
             <button class="lang-toggle" onclick="toggleLanguage()">தமிழ் / EN</button>
         </div>
@@ -145,8 +169,10 @@
     <a href="tel:7904964623" class="floating-call">📞</a>
 
     <header>
+        <img src="https://spadentalclinic.com/favicon.png" alt="SPA Dental Logo" class="header-logo">
         <h2 class="hero-name" id="doc-name">Dr. S. Parvatham</h2>
         <p id="doc-title" style="font-size: 1.2rem; font-weight: 600; color: #64748b;">B.D.S (Dental Surgeon)</p>
+        <p id="clinic-motto" class="motto-text">A Service Beyond Promise</p>
     </header>
 
     <div style="text-align:center; margin-bottom:40px;">
@@ -154,7 +180,7 @@
     </div>
 
     <div class="stats-container">
-        <div class="stat-card glass"><h3>5+</h3><p id="stat-years">Years Experience</p></div>
+        <div class="stat-card glass"><h3>5+</h3><p id="stat-years">Years</p></div>
         <div class="stat-card glass"><h3>5000+</h3><p id="stat-patients">Patients Served</p></div>
         <div class="stat-card glass"><h3>4.9 ⭐</h3><p id="stat-rating">Customer Rating</p></div>
     </div>
@@ -234,7 +260,7 @@
         <p id="footer-copy">© 2026 S P A Dental Clinic Chennai. All Rights Reserved.</p>
         <p id="footer-reg">Dr. S.Parvatham (B.D.S) | TNSDC Reg No: 22347</p>
         <p id="footer-hours">Working Hours: 10:00 AM - 08:30 PM</p>
-        <p id="tagline" style="margin-top: 20px; font-style: italic; color: #94a3b8;">"Providing Smiles Across Chennai"</p>
+        <p id="tagline" style="margin-top: 10px; font-style: italic; color: #94a3b8;">"Providing Smiles Across Chennai"</p>
     </footer>
 
     <script>
@@ -247,7 +273,8 @@
                     title: "S P A Dental Clinic | Best Dentist in Padappai & Chennai",
                     nav: "S P A DENTAL CLINIC", 
                     docName: "Dr. S. Parvatham", docTitle: "B.D.S (Dental Surgeon)",
-                    heroBtn: "Book Appointment", years: "Years Experience", patients: "Patients Served", rating: "Customer Rating",
+                    motto: "A Service Beyond Promise",
+                    heroBtn: "Book Appointment", years: "Years", patients: "Patients Served", rating: "Customer Rating",
                     gallery: "Clinical Excellence", cap1: "Expert Dental Consultation", cap2: "Friendly Kids Dentistry", cap3: "Advanced Root Canal Care",
                     head: "Our Dental Services", s1: "Root Canal", s1d: "Pain-free restoration of infected teeth.",
                     s2: "Kids Tooth Advice", s2d: "Dedicated pediatric care for healthy smiles.",
@@ -258,18 +285,17 @@
                     mapTitle: "Mappls Location", visitHead: "Book Appointment", patientPlace: "Patient Name",
                     optDef: "Select Service", o1: "Root Canal", o2: "Kids Dentistry", o3: "Tooth Pain", o4: "Replacement", o5: "Consultation", o6: "Whitening",
                     btn: "WhatsApp Booking", directCall: "Direct Call: 79049 64623",
-                    contactHead: "Visit Us", 
-                    addr1: "SPA Dental Clinic – Padappai",
-                    addr2: "1/190A, First Salamangalam Road Athanancheri,",
-                    addr3: "Salamangalam Junction, Padappai, Chennai, Tamil Nadu, 601301",
+                    contactHead: "Visit Us", addr1: "SPA Dental Clinic – Padappai", addr2: "1/190A, First Salamangalam Road Athanancheri,", addr3: "Salamangalam Junction, Padappai, Chennai, Tamil Nadu, 601301",
                     hours: "Open: 10 AM to 8:30 PM", phone: "Phone: +91 79049 64623", email: "Email: booking@spadentalclinic.com",
-                    copy: "© 2026 S P A Dental Clinic Chennai. All Rights Reserved.", reg: "Dr. S.Parvatham (B.D.S) | TNSDC Reg No: 22347", fHours: "Working Hours: 10:00 AM - 08:30 PM", tag: "\"Providing Smiles Across Chennai\""
+                    copy: "© 2026 S P A Dental Clinic Chennai. All Rights Reserved.", reg: "Dr. S.Parvatham (B.D.S) | TNSDC Reg No: 22347", fHours: "Working Hours: 10:00 AM - 08:30 PM", 
+                    tag: "\"Providing Smiles Across Chennai\""
                 },
                 ta: {
                     title: "எஸ்.பி.ஏ பல் மருத்துவமனை | படப்பை , சென்னை",
                     nav: "எஸ்.பி.ஏ பல் மருத்துவமனை", 
                     docName: "டாக்டர் சு. பர்வதம்", docTitle: "B.D.S (பல் அறுவை சிகிச்சை நிபுணர்)",
-                    heroBtn: "முன்பதிவு செய்ய", years: "ஆண்டுகள் அனுபவம்", patients: "சிகிச்சை பெற்றவர்கள்", rating: "வாடிக்கையாளர் மதிப்பீடு",
+                    motto: "வாக்களித்ததற்கும் மேலான சேவை",
+                    heroBtn: "முன்பதிவு செய்ய", years: "ஆண்டுகள்", patients: "சிகிச்சை பெற்றவர்கள்", rating: "வாடிக்கையாளர் மதிப்பீடு",
                     gallery: "சிறந்த சிகிச்சை", cap1: "நிபுணர் பல் ஆலோசனை", cap2: "குழந்தைகளுக்கான பல் மருத்துவம்", cap3: "மேம்பட்ட ரூட் கெனால் சிகிச்சை",
                     head: "எங்கள் சேவைகள்", s1: "ரூட் கெனால்", s1d: "பாதிக்கப்பட்ட பற்களை வலியின்றி சரி செய்தல்.",
                     s2: "குழந்தைகளுக்கான பல் பராமரிப்பு", s2d: "குழந்தைகளுக்கான சிறப்பு பல் பாதுகாப்பு.",
@@ -280,12 +306,10 @@
                     mapTitle: "மேப்பல்ஸ் வரைபடம்", visitHead: "முன்பதிவு செய்ய", patientPlace: "நோயாளி பெயர்",
                     optDef: "சேவையைத் தேர்ந்தெடுக்கவும்", o1: "ரூட் கெனால்", o2: "குழந்தைகள் பல் மருத்துவம்", o3: "பல் வலி", o4: "பல் மாற்று", o5: "பரிசோதனை", o6: "வெண்மையாக்குதல்",
                     btn: "வாட்ஸ்அப் முன்பதிவு", directCall: "நேரடி அழைப்பு: 79049 64623",
-                    contactHead: "நேரில் வர", 
-                    addr1: "எஸ்.பி.ஏ பல் மருத்துவமனை – படப்பை ",
-                    addr2: "1/190A, முதல் சாலமங்கலம் சாலை, அதனஞ்சேரி,",
-                    addr3: "சாலமங்கலம் சந்திப்பு, படப்பை, சென்னை, தமிழ்நாடு, 601301",
+                    contactHead: "நேரில் வர", addr1: "எஸ்.பி.ஏ பல் மருத்துவமனை – படப்பை ", addr2: "1/190A, முதல் சாலமங்கலம் சாலை, அதனஞ்சேரி,", addr3: "சாலமங்கலம் சந்திப்பு, படப்பை, சென்னை, தமிழ்நாடு, 601301",
                     hours: "நேரம்: காலை 10 - இரவு 8:30", phone: "தொலைபேசி: +91 79049 64623", email: "மின்னஞ்சல்: booking@spadentalclinic.com",
-                    copy: "© 2026 எஸ்.பி.ஏ பல் மருத்துவமனை. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.", reg: "டாக்டர் சு. பர்வதம் (B.D.S) | TNSDC பதிவு எண்: 22347", fHours: "வேலை நேரம்: காலை 10:00 - இரவு 08:30", tag: "\"சென்னை முழுவதும் புன்னகையை வழங்குதல்\""
+                    copy: "© 2026 எஸ்.பி.ஏ பல் மருத்துவமனை. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.", reg: "டாக்டர் சு. பர்வதம் (B.D.S) | TNSDC பதிவு எண்: 22347", fHours: "வேலை நேரம்: காலை 10:00 - இரவு 08:30", 
+                    tag: "\"சென்னை முழுவதும் புன்னகையை வழங்குகிறது\""
                 }
             };
 
@@ -303,6 +327,8 @@
             updateText('nav-brand', lang.nav);
             updateText('doc-name', lang.docName);
             updateText('doc-title', lang.docTitle);
+            updateText('clinic-motto', lang.motto);
+            updateText('footer-motto', lang.motto);
             updateText('hero-book-btn', lang.heroBtn);
             updateText('stat-years', lang.years);
             updateText('stat-patients', lang.patients);
@@ -312,35 +338,23 @@
             updateText('cap2', lang.cap2);
             updateText('cap3', lang.cap3);
             updateText('services-head', lang.head);
-            
             updateText('s1', lang.s1); updateText('s1d', lang.s1d);
             updateText('s2', lang.s2); updateText('s2d', lang.s2d);
             updateText('s3', lang.s3); updateText('s3d', lang.s3d);
             updateText('s4', lang.s4); updateText('s4d', lang.s4d);
             updateText('s5', lang.s5); updateText('s5d', lang.s5d);
             updateText('s6', lang.s6); updateText('s6d', lang.s6d);
-            
             updateText('map-title', lang.mapTitle);
             updateText('visit-head', lang.visitHead);
             updateText('name', lang.patientPlace, true);
             updateText('opt-def', lang.optDef);
-            updateText('opt1', lang.o1);
-            updateText('opt2', lang.o2);
-            updateText('opt3', lang.o3);
-            updateText('opt4', lang.o4);
-            updateText('opt5', lang.o5);
-            updateText('opt6', lang.o6);
+            updateText('opt1', lang.o1); updateText('opt2', lang.o2); updateText('opt3', lang.o3); updateText('opt4', lang.o4); updateText('opt5', lang.o5); updateText('opt6', lang.o6);
             updateText('btn-text', lang.btn);
             updateText('direct-call', lang.directCall);
-            
             updateText('contact-head', lang.contactHead);
-            updateText('addr-line1', lang.addr1);
-            updateText('addr-line2', lang.addr2);
-            updateText('addr-line3', lang.addr3);
+            updateText('addr-line1', lang.addr1); updateText('addr-line2', lang.addr2); updateText('addr-line3', lang.addr3);
             updateText('hours-badge', lang.hours);
-            updateText('phone-label', lang.phone);
-            updateText('email-label', lang.email);
-            
+            updateText('phone-label', lang.phone); updateText('email-label', lang.email);
             updateText('footer-copy', lang.copy);
             updateText('footer-reg', lang.reg);
             updateText('footer-hours', lang.fHours);
