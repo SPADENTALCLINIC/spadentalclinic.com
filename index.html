@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">S P A Dental Clinic | Dr. S.Parvatham</title>
+    
+    <title id="page-title">S P A Dental Clinic | Best Dentist in Padappai & Chennai | Dr. S.Parvatham</title>
+    <meta name="description" content="S P A Dental Clinic by Dr. S.Parvatham (B.D.S). Best Dentist in Padappai, Chennai. Open 10 AM to 8:30 PM. Expert Root Canal and Kids Dentistry.">
+    <meta name="keywords" content="Dental Clinic Chennai, Dentist in Padappai, Root Canal Chennai, Dr. S Parvatham, SPA Dental, Best Dentist Chennai, Dental Surgeon Padappai">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -17,7 +21,7 @@
                              radial-gradient(at 100% 0%, hsla(190,100%,91%,1) 0, transparent 50%);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -31,166 +35,84 @@
         .glass {
             background: var(--glass-bg);
             backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--glass-border);
             border-radius: 30px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
         }
 
-        /* Nav Bar */
         nav {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 95%;
-            max-width: 1200px;
-            padding: 12px 30px;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+            width: 95%; max-width: 1200px; padding: 12px 30px; z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
         }
 
         .brand h1 { font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--primary); }
 
-        .nav-actions { display: flex; gap: 10px; align-items: center; }
-
         .lang-toggle {
-            background: white;
-            color: var(--primary);
-            border: 1px solid var(--primary);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-weight: 700;
-            cursor: pointer;
-            font-size: 0.8rem;
+            background: white; color: var(--primary); border: 1px solid var(--primary);
+            padding: 8px 16px; border-radius: 50px; font-weight: 700; cursor: pointer;
         }
 
-        /* Call Buttons */
-        .btn-call-nav {
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            transition: 0.3s;
-        }
-
-        .floating-call {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--primary);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 25px rgba(30, 64, 175, 0.3);
-            z-index: 999;
-            text-decoration: none;
-            font-size: 1.5rem;
-        }
-
-        header {
-            padding: 160px 20px 60px;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-		 .reg-badge {
-            background: #dbeafe;
-            color: var(--primary);
-            padding: 5px 18px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 12px;
-        }
-
-
+        header { padding: 160px 20px 30px; text-align: center; }
         h2.hero-name { font-family: 'Outfit', sans-serif; font-size: clamp(2.5rem, 8vw, 4rem); color: var(--primary); font-weight: 800; }
 
-        .section-title { text-align: center; margin: 60px 0 30px; font-family: 'Outfit', sans-serif; font-size: 2.2rem; color: var(--primary); }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .btn-book-hero {
+            display: inline-block; background: var(--primary); color: white;
+            text-decoration: none; padding: 15px 35px; border-radius: 50px;
+            font-weight: 800; box-shadow: 0 10px 20px rgba(30, 64, 175, 0.2);
         }
 
+        .stats-container {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px; max-width: 1100px; margin: 0 auto 60px; padding: 0 20px;
+        }
+        .stat-card { padding: 30px; text-align: center; }
+        .stat-card h3 { font-size: 2.5rem; color: var(--primary); font-family: 'Outfit'; font-weight: 800; }
+
+        .clinic-gallery {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px; max-width: 1200px; margin: 40px auto; padding: 0 20px;
+        }
+        .gallery-item { height: 250px; overflow: hidden; border-radius: 20px; position: relative; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gallery-item:hover img { transform: scale(1.05); }
+        .img-caption { position: absolute; bottom: 0; width: 100%; padding: 15px; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: white; font-weight: 600; }
+
+        .section-title { text-align: center; margin: 40px 0 30px; font-family: 'Outfit', sans-serif; font-size: 2.2rem; color: var(--primary); }
+
+        .services-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px; max-width: 1200px; margin: 0 auto; padding: 0 20px;
+        }
         .service-card { padding: 25px; text-align: center; }
-        .service-card h3 { color: var(--primary); margin-bottom: 10px; font-family: 'Outfit'; }
 
         .main-content {
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 30px;
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
+            display: grid; grid-template-columns: 1.3fr 1fr;
+            gap: 30px; max-width: 1200px; margin: 60px auto; padding: 0 20px;
         }
 
         .booking-section { padding: 40px; }
-        
-        form input, form select {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 12px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            background: rgba(255, 255, 255, 0.8);
-            font-family: inherit;
-        }
-
         .btn-submit {
-            width: 100%;
-            padding: 18px;
-            background: #25D366;
-            color: white;
-            border: none;
-            border-radius: 15px;
-            font-weight: 800;
-            cursor: pointer;
-            margin-bottom: 10px;
+            width: 100%; padding: 18px; background: #25D366; color: white;
+            border: none; border-radius: 15px; font-weight: 800; cursor: pointer;
         }
 
-        .btn-call-secondary {
-            display: block;
-            text-align: center;
-            width: 100%;
-            padding: 15px;
-            background: white;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: 700;
+        .contact-us-section { max-width: 1200px; margin: 40px auto; padding: 40px 20px; text-align: center; }
+        .contact-card-link { text-decoration: none; color: inherit; display: inline-block; width: 100%; max-width: 800px; transition: 0.3s ease; }
+        .contact-card-link:hover { transform: translateY(-5px); }
+        .contact-card { padding: 60px 40px; }
+        .hours-badge { background: #e0f2fe; color: #0369a1; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: 800; display: inline-block; margin-top: 10px; }
+
+        footer { text-align: center; padding: 60px 20px; color: #64748b; font-size: 0.95rem; border-top: 1px solid rgba(0,0,0,0.05); }
+
+        .floating-call {
+            position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+            color: white; width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; z-index: 999;
+            text-decoration: none; font-size: 1.5rem; box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3);
         }
 
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 40px;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            color: #64748b;
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 968px) {
-            .main-content { grid-template-columns: 1fr; }
-            header { padding-top: 120px; }
-            .btn-call-nav { display: none; }
-        }
+        @media (max-width: 968px) { .main-content { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -199,73 +121,103 @@
         <div class="brand"><h1 id="nav-brand">S P A DENTAL CLINIC</h1></div>
         <div class="nav-actions">
             <button class="lang-toggle" onclick="toggleLanguage()">தமிழ் / EN</button>
-            <a href="tel:7904964623" class="btn-call-nav" id="nav-call-btn">Call Now</a>
+            <!--<a href="tel:7904964623" id="nav-call" style="background:var(--primary); color:white; text-decoration:none; padding:8px 20px; border-radius:50px; font-weight:700; font-size:0.8rem;">Call Now</a>-->
         </div>
     </nav>
 
     <a href="tel:7904964623" class="floating-call">📞</a>
-    <header>
-        <h2 class="hero-name" id="doc-name">Dr. S.Parvatham</h2>
-				<div class="reg-badge">TNSDC Reg No: 22347</div>
 
+    <header>
+        <h2 class="hero-name" id="doc-name">Dr. S. Parvatham</h2>
         <p id="doc-title" style="font-size: 1.2rem; font-weight: 600; color: #64748b;">B.D.S (Dental Surgeon)</p>
     </header>
-    <h2 class="section-title" id="services-head">Our Dental Services</h2>
-    <div class="services-grid">
-        <div class="service-card glass">
-            <h3 id="s1">Root Canal Service</h3>
-            <p id="s1d">Pain-free restoration of infected teeth.</p>
+
+    <div style="text-align:center; margin-bottom:40px;">
+        <a href="#appointment-anchor" class="btn-book-hero" id="hero-book-btn">Book Appointment</a>
+    </div>
+
+    <div class="stats-container">
+        <div class="stat-card glass"><h3>5+</h3><p id="stat-years">Years Experience</p></div>
+        <div class="stat-card glass"><h3>5000+</h3><p id="stat-patients">Patients Served</p></div>
+        <div class="stat-card glass"><h3>4.9 ⭐</h3><p id="stat-rating">Customer Rating</p></div>
+    </div>
+
+    <h2 class="section-title" id="gallery-head">Clinical Excellence</h2>
+    <div class="clinic-gallery">
+        <div class="gallery-item glass">
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="Consultation">
+            <div class="img-caption" id="cap1">Expert Dental Consultation</div>
         </div>
-        <div class="service-card glass">
-            <h3 id="s2">Kids Tooth Advice</h3>
-            <p id="s2d">Dedicated pediatric care and growth monitoring.</p>
+        <div class="gallery-item glass">
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="Pediatric">
+            <div class="img-caption" id="cap2">Friendly Kids Dentistry</div>
         </div>
-        <div class="service-card glass">
-            <h3 id="s3">Tooth Pain</h3>
-            <p id="s3d">Emergency relief and diagnostics for toothaches.</p>
-        </div>
-        <div class="service-card glass">
-            <h3 id="s4">Tooth Replacement</h3>
-            <p id="s4d">Bridges, dentures, and modern implant solutions.</p>
-        </div>
-        <div class="service-card glass">
-            <h3 id="s5">Dental Consultation</h3>
-            <p id="s5d">Complete oral checkup and treatment planning.</p>
-        </div>
-        <div class="service-card glass">
-            <h3 id="s6">Tooth Whitening</h3>
-            <p id="s6d">Professional cleaning for a brighter smile.</p>
+        <div class="gallery-item glass">
+            <img src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?auto=format&fit=crop&w=600&q=80" alt="Treatment">
+            <div class="img-caption" id="cap3">Advanced Root Canal Care</div>
         </div>
     </div>
 
+    <h2 class="section-title" id="services-head">Our Dental Services</h2>
+    <div class="services-grid">
+        <div class="service-card glass"><h3 id="s1">Root Canal</h3><p id="s1d">Pain-free restoration of infected teeth.</p></div>
+        <div class="service-card glass"><h3 id="s2">Kids Tooth Advice</h3><p id="s2d">Dedicated pediatric care for healthy smiles.</p></div>
+        <div class="service-card glass"><h3 id="s3">Tooth Pain</h3><p id="s3d">Emergency relief for dental aches.</p></div>
+        <div class="service-card glass"><h3 id="s4">Replacement</h3><p id="s4d">Bridges and modern implant solutions.</p></div>
+        <div class="service-card glass"><h3 id="s5">Consultation</h3><p id="s5d">Complete oral checkup and planning.</p></div>
+        <div class="service-card glass"><h3 id="s6">Whitening</h3><p id="s6d">Professional cleaning for a bright smile.</p></div>
+    </div>
+
     <div class="main-content">
-        <div class="glass" style="height: 500px; overflow: hidden;">
-            <iframe src="https://embed.mappls.com/place/k17af2?token=YOUR_TOKEN&zoom=16" style="width:100%; height:100%; border:none;"></iframe>
+        <div class="map-wrapper">
+            <h2 id="map-title">Location Map</h2>
+            <div class="glass" style="height: 450px; overflow: hidden;">
+                <iframe src="https://embed.mappls.com/place/k17af2?zoom=16" style="width:100%; height:100%; border:none;"></iframe>
+            </div>
         </div>
 
-        <div class="booking-section glass">
+        <div class="booking-section glass" id="appointment-anchor">
             <h2 id="visit-head" style="margin-bottom: 20px;">Book Appointment</h2>
             <form id="appointmentForm">
-                <input type="text" id="name" placeholder="Patient Name" required>
-                <select id="service" required>
+                <input type="text" id="name" placeholder="Patient Name" style="width:100%; padding:15px; margin-bottom:12px; border-radius:12px; border:1px solid #e2e8f0;" required>
+                <select id="service" style="width:100%; padding:15px; margin-bottom:12px; border-radius:12px; border:1px solid #e2e8f0;" required>
                     <option value="" id="opt-def">Select Service</option>
                     <option id="opt1">Root Canal</option>
                     <option id="opt2">Kids Dentistry</option>
                     <option id="opt3">Tooth Pain</option>
-                    <option id="opt4">Tooth Replacement</option>
+                    <option id="opt4">Replacement</option>
                     <option id="opt5">Consultation</option>
                     <option id="opt6">Whitening</option>
                 </select>
                 <button type="submit" class="btn-submit" id="btn-text">WhatsApp Booking</button>
             </form>
-            <a href="tel:7904964623" class="btn-call-secondary" id="sec-call-btn">Direct Call: 79049 64623</a>
+            <a href="tel:7904964623" id="direct-call" style="display:block; text-align:center; padding:15px; background:white; color:var(--primary); border:2px solid var(--primary); border-radius:15px; text-decoration:none; font-weight:700; margin-top:10px;">Direct Call: 79049 64623</a>
         </div>
     </div>
 
+    <div class="contact-us-section">
+        <a href="https://www.mappls.com/k17af2" target="_blank" class="contact-card-link">
+            <div class="contact-card glass">
+                <h2 id="contact-head">Visit Us</h2>
+                <div style="font-weight: 700; color: #334155; margin-bottom: 20px;">
+                    <p><strong id="addr-line1">SPA Dental Clinic – Padappai Branch</strong></p>
+                    <p id="addr-line2">k17af2, 1/190A, First Salamangalam Road Athanancheri,</p>
+                    <p id="addr-line3">Salamangalam Junction, Padappai, Chennai, Tamil Nadu, 601301</p>
+                    <div class="hours-badge" id="hours-badge">Open: 10 AM to 8:30 PM</div>
+                </div>
+                <div style="margin-top:25px; padding-top:25px; border-top:1px solid rgba(0,0,0,0.05); font-weight:600; color:#475569;">
+                    <p id="phone-label">Phone: +91 79049 64623</p>
+                    <p id="email-label">Email: booking@spadentalclinic.com</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
     <footer>
-        <p id="footer-copy">&copy; 2026 S P A Dental Clinic. All Rights Reserved.</p>
-        <p id="footer-doc">Dr. S.Parvatham (B.D.S) | TNSDC Reg No: 22347</p>
-        <p style="margin-top: 10px; font-style: italic;" id="tagline">"A Service Beyond Promise"</p>
+        <p id="footer-copy">© 2026 S P A Dental Clinic Chennai. All Rights Reserved.</p>
+        <p id="footer-reg">Dr. S.Parvatham (B.D.S) | TNSDC Reg No: 22347</p>
+        <p id="footer-hours">Working Hours: 10:00 AM - 08:30 PM</p>
+        <p id="tagline" style="margin-top: 20px; font-style: italic; color: #94a3b8;">"Providing Smiles Across Chennai"</p>
     </footer>
 
     <script>
@@ -274,76 +226,80 @@
             isTamil = !isTamil;
             const t = {
                 en: {
-                    title: "S P A Dental Clinic | Dr. S.Parvatham",
-                    nav: "S P A DENTAL CLINIC",
-                    call: "Call Now",
-                    docName: "Dr. S. Parvatham",
-                    docTitle: "B.D.S (Dental Surgeon)",
-                    head: "Our Dental Services",
-                    s1: "Root Canal Service", s1d: "Pain-free restoration of infected teeth.",
-                    s2: "Kids Tooth Advice", s2d: "Dedicated pediatric care and growth monitoring.",
-                    s3: "Tooth Pain", s3d: "Emergency relief and diagnostics for toothaches.",
-                    s4: "Tooth Replacement", s4d: "Bridges, dentures, and modern implant solutions.",
-                    s5: "Dental Consultation", s5d: "Complete oral checkup and treatment planning.",
-                    s6: "Tooth Whitening", s6d: "Professional cleaning for a brighter smile.",
-                    visitHead: "Book Appointment",
-                    patientPlace: "Patient Name",
-                    optDef: "Select Service",
-                    o1: "Root Canal", o2: "Kids Dentistry", o3: "Tooth Pain", o4: "Tooth Replacement", o5: "Consultation", o6: "Whitening",
-                    btn: "WhatsApp Booking",
-                    secCall: "Direct Call: 79049 64623",
-                    copy: "© 2026 S P A Dental Clinic. All Rights Reserved.",
-                    tag: "\"A Service Beyond Promise\""
+                    title: "S P A Dental Clinic | Best Dentist in Padappai & Chennai",
+                    nav: "S P A DENTAL CLINIC", navCall: "Call Now",
+                    docName: "Dr. S. Parvatham", docTitle: "B.D.S (Dental Surgeon)",
+                    heroBtn: "Book Appointment", years: "Years Experience", patients: "Patients Served", rating: "Customer Rating",
+                    gallery: "Clinical Excellence", cap1: "Expert Dental Consultation", cap2: "Friendly Kids Dentistry", cap3: "Advanced Root Canal Care",
+                    head: "Our Dental Services", s1: "Root Canal", s1d: "Pain-free restoration of infected teeth.",
+                    s2: "Kids Tooth Advice", s2d: "Dedicated pediatric care for healthy smiles.",
+                    s3: "Tooth Pain", s3d: "Emergency relief for dental aches.",
+                    s4: "Replacement", s4d: "Bridges and modern implant solutions.",
+                    s5: "Consultation", s5d: "Complete oral checkup and planning.",
+                    s6: "Whitening", s6d: "Professional cleaning for a bright smile.",
+                    mapTitle: "Location Map", visitHead: "Book Appointment", patientPlace: "Patient Name",
+                    optDef: "Select Service", o1: "Root Canal", o2: "Kids Dentistry", o3: "Tooth Pain", o4: "Replacement", o5: "Consultation", o6: "Whitening",
+                    btn: "WhatsApp Booking", directCall: "Direct Call: 79049 64623",
+                    contactHead: "Visit Us", 
+                    addr1: "SPA Dental Clinic – Padappai Branch",
+                    addr2: "k17af2, 1/190A, First Salamangalam Road Athanancheri,",
+                    addr3: "Salamangalam Junction, Padappai, Chennai, Tamil Nadu, 601301",
+                    hours: "Open: 10 AM to 8:30 PM", phone: "Phone: +91 79049 64623", email: "Email: booking@spadentalclinic.com",
+                    copy: "© 2026 S P A Dental Clinic Chennai. All Rights Reserved.", reg: "Dr. S.Parvatham (B.D.S) | TNSDC Reg No: 22347", fHours: "Working Hours: 10:00 AM - 08:30 PM", tag: "\"Providing Smiles Across Chennai\""
                 },
                 ta: {
-                    title: "எஸ்.பி.ஏ பல் மருத்துவமனை | டாக்டர். சு.பர்வதம்",
-                    nav: "எஸ்.பி.ஏ பல் மருத்துவமனை",
-                    call: "அழைக்க",
-                    docName: "டாக்டர். சு.பர்வதம்",
-                    docTitle: "B.D.S (பல் அறுவை சிகிச்சை நிபுணர்)",
-                    head: "எங்கள் பல் மருத்துவ சேவைகள்",
-                    s1: "ரூட் கெனால் சிகிச்சை", s1d: "பாதிக்கப்பட்ட பற்களை வலியின்றி சரி செய்தல்.",
-                    s2: "குழந்தைகளுக்கான ஆலோசனை", s2d: "குழந்தைகளுக்கான சிறப்பு பல் பராமரிப்பு.",
-                    s3: "பல் வலி சிகிச்சை", s3d: "பல் வலிக்கு உடனடித் தீர்வு மற்றும் பரிசோதனை.",
-                    s4: "பல் மாற்று சிகிச்சை", s4d: "பற்கள் கட்டுதல் மற்றும் நவீன மாற்று முறைகள்.",
-                    s5: "பல் பரிசோதனை", s5d: "முழுமையான பல் பரிசோதனை மற்றும் ஆலோசனை.",
+                    title: "எஸ்.பி.ஏ பல் மருத்துவமனை | சென்னை & படப்பை",
+                    nav: "எஸ்.பி.ஏ பல் மருத்துவமனை", navCall: "அழைக்க",
+                    docName: "டாக்டர் சு. பர்வதம்", docTitle: "B.D.S (பல் அறுவை சிகிச்சை நிபுணர்)",
+                    heroBtn: "முன்பதிவு செய்ய", years: "ஆண்டுகள் அனுபவம்", patients: "சிகிச்சை பெற்றவர்கள்", rating: "வாடிக்கையாளர் மதிப்பீடு",
+                    gallery: "சிறந்த சிகிச்சை", cap1: "நிபுணர் பல் ஆலோசனை", cap2: "குழந்தைகளுக்கான பல் மருத்துவம்", cap3: "மேம்பட்ட ரூட் கெனால் சிகிச்சை",
+                    head: "எங்கள் சேவைகள்", s1: "ரூட் கெனால்", s1d: "பாதிக்கப்பட்ட பற்களை வலியின்றி சரி செய்தல்.",
+                    s2: "குழந்தைகளுக்கான பல் பராமரிப்பு", s2d: "குழந்தைகளுக்கான சிறப்பு பல் பாதுகாப்பு.",
+                    s3: "பல் வலி", s3d: "பல் வலிக்கு உடனடி தீர்வு.",
+                    s4: "பல் மாற்று", s4d: "நவீன பல் மாற்று முறைகள்.",
+                    s5: "பரிசோதனை", s5d: "முழுமையான பல் பரிசோதனை மற்றும் ஆலோசனை.",
                     s6: "பற்கள் வெண்மையாக்குதல்", s6d: "பற்களை வெண்மையாக்கும் நவீன சிகிச்சை.",
-                    visitHead: "முன்பதிவு செய்ய",
-                    patientPlace: "நோயாளி பெயர்",
-                    optDef: "சேவையைத் தேர்ந்தெடுக்கவும்",
-                    o1: "ரூட் கெனால்", o2: "குழந்தைகள் பல் மருத்துவம்", o3: "பல் வலி", o4: "பல் மாற்று சிகிச்சை", o5: "பரிசோதனை", o6: "வெண்மையாக்குதல்",
-                    btn: "வாட்ஸ்அப் முன்பதிவு",
-                    secCall: "நேரடி அழைப்பு: 79049 64623",
-                    copy: "© 2026 எஸ்.பி.ஏ பல் மருத்துவமனை. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
-                    tag: "\"வாக்களித்ததை விட சிறந்த சேவை\""
+                    mapTitle: "வரைபடம்", visitHead: "முன்பதிவு செய்ய", patientPlace: "நோயாளி பெயர்",
+                    optDef: "சேவையைத் தேர்ந்தெடுக்கவும்", o1: "ரூட் கெனால்", o2: "குழந்தைகள் பல் மருத்துவம்", o3: "பல் வலி", o4: "பல் மாற்று", o5: "பரிசோதனை", o6: "வெண்மையாக்குதல்",
+                    btn: "வாட்ஸ்அப் முன்பதிவு", directCall: "நேரடி அழைப்பு: 79049 64623",
+                    contactHead: "நேரில் வர", 
+                    addr1: "எஸ்.பி.ஏ பல் மருத்துவமனை – படப்பை கிளை",
+                    addr2: "k17af2, 1/190A, முதல் சலமங்கலம் சாலை, அதனஞ்சேரி,",
+                    addr3: "சலமங்கலம் சந்திப்பு, படப்பை, சென்னை, தமிழ்நாடு, 601301",
+                    hours: "நேரம்: காலை 10 - இரவு 8:30", phone: "தொலைபேசி: +91 79049 64623", email: "மின்னஞ்சல்: booking@spadentalclinic.com",
+                    copy: "© 2026 எஸ்.பி.ஏ பல் மருத்துவமனை. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.", reg: "டாக்டர் சு. பர்வதம் (B.D.S) | TNSDC பதிவு எண்: 22347", fHours: "வேலை நேரம்: காலை 10:00 - இரவு 08:30", tag: "\"சென்னை முழுவதும் புன்னகையை வழங்குதல்\""
                 }
             };
 
             const lang = isTamil ? t.ta : t.en;
-
-            // Identity
+            
+            // Core Text
             document.getElementById('page-title').innerText = lang.title;
             document.getElementById('nav-brand').innerText = lang.nav;
+            document.getElementById('nav-call').innerText = lang.navCall;
             document.getElementById('doc-name').innerText = lang.docName;
             document.getElementById('doc-title').innerText = lang.docTitle;
-            
-            // Buttons & Navigation
-            document.getElementById('nav-call-btn').innerText = lang.call;
-            document.getElementById('sec-call-btn').innerText = lang.secCall;
-            
-            // Layout Heads
+            document.getElementById('hero-book-btn').innerText = lang.heroBtn;
+            document.getElementById('stat-years').innerText = lang.years;
+            document.getElementById('stat-patients').innerText = lang.patients;
+            document.getElementById('stat-rating').innerText = lang.rating;
+            document.getElementById('gallery-head').innerText = lang.gallery;
+            document.getElementById('cap1').innerText = lang.cap1;
+            document.getElementById('cap2').innerText = lang.cap2;
+            document.getElementById('cap3').innerText = lang.cap3;
             document.getElementById('services-head').innerText = lang.head;
-            document.getElementById('visit-head').innerText = lang.visitHead;
-
-            // Service Cards
+            
+            // Services
             document.getElementById('s1').innerText = lang.s1; document.getElementById('s1d').innerText = lang.s1d;
             document.getElementById('s2').innerText = lang.s2; document.getElementById('s2d').innerText = lang.s2d;
             document.getElementById('s3').innerText = lang.s3; document.getElementById('s3d').innerText = lang.s3d;
             document.getElementById('s4').innerText = lang.s4; document.getElementById('s4d').innerText = lang.s4d;
             document.getElementById('s5').innerText = lang.s5; document.getElementById('s5d').innerText = lang.s5d;
             document.getElementById('s6').innerText = lang.s6; document.getElementById('s6d').innerText = lang.s6d;
-
-            // Form Elements
+            
+            // Map & Form
+            document.getElementById('map-title').innerText = lang.mapTitle;
+            document.getElementById('visit-head').innerText = lang.visitHead;
             document.getElementById('name').placeholder = lang.patientPlace;
             document.getElementById('opt-def').innerText = lang.optDef;
             document.getElementById('opt1').innerText = lang.o1;
@@ -352,16 +308,30 @@
             document.getElementById('opt4').innerText = lang.o4;
             document.getElementById('opt5').innerText = lang.o5;
             document.getElementById('opt6').innerText = lang.o6;
-            
-            // Footer & Warnings
             document.getElementById('btn-text').innerText = lang.btn;
+            document.getElementById('direct-call').innerText = lang.directCall;
+            
+            // Contact & Address Fix
+            document.getElementById('contact-head').innerText = lang.contactHead;
+            document.getElementById('addr-line1').innerText = lang.addr1;
+            document.getElementById('addr-line2').innerText = lang.addr2;
+            document.getElementById('addr-line3').innerText = lang.addr3;
+            document.getElementById('hours-badge').innerText = lang.hours;
+            document.getElementById('phone-label').innerText = lang.phone;
+            document.getElementById('email-label').innerText = lang.email;
+            
+            // Footer
             document.getElementById('footer-copy').innerText = lang.copy;
+            document.getElementById('footer-reg').innerText = lang.reg;
+            document.getElementById('footer-hours').innerText = lang.fHours;
             document.getElementById('tagline').innerText = lang.tag;
         }
 
         document.getElementById('appointmentForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const msg = `S P A Dental Appointment:%0A- Patient: ${document.getElementById('name').value}%0A- Service: ${document.getElementById('service').value}`;
+            const patientName = document.getElementById('name').value;
+            const serviceChosen = document.getElementById('service').value;
+            const msg = `S P A Dental Appointment:%0A- Patient: ${patientName}%0A- Service: ${serviceChosen}`;
             window.open(`https://wa.me/917904964623?text=${msg}`, '_blank');
         });
     </script>
